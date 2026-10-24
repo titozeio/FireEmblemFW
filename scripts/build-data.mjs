@@ -160,8 +160,8 @@ async function main() {
     classes
   };
 
-  await writeFile(resolve(dataDir, 'characters.json'), JSON.stringify(charactersOut, null, 2) + '\n', 'utf8');
-  await writeFile(resolve(dataDir, 'classes.json'), JSON.stringify(classesOut, null, 2) + '\n', 'utf8');
+  await writeFile(resolve(dataDir, 'characters.json'), JSON.stringify(charactersOut, null, 2) + '\n', { encoding: 'utf8' });
+  await writeFile(resolve(dataDir, 'classes.json'), JSON.stringify(classesOut, null, 2) + '\n', { encoding: 'utf8' });
   console.log(`Wrote ${characters.length} characters and ${classes.length} classes`);
 }
 
