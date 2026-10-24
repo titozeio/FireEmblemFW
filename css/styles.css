@@ -310,3 +310,21 @@ main {
     scroll-behavior: auto !important;
   }
 }
+
+.cell-input,
+.cell-select {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 4px 6px;
+}
+
+.cell-input[type="number"] {
+  text-align: center;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

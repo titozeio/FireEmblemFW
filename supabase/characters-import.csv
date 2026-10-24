@@ -1,0 +1,64 @@
+name,type,tierScore,tierLetter,recruitRoute,initialClass,intermediateClass,advancedClass,masterClass,divineClass,roleNotes
+Alexandra,Recruitable,5,S,All,Gladiator,Wing Soldier,Dragoon,Celestial Trooper,The Cavalier,Fast flying lancer with high Resistance and excellent mobility.
+Anatolia,Recruitable,5,S,All,Diviner,Shaman,Ovate,Druid,The Avatar,Powerful late-game mage with excellent magic offense.
+Bertrand,Recruitable,5,S,All,Gladiator,Brigand,Warrior,Battlemaster,The Eternal,Late-game axe bruiser; joins strong and hits very hard.
+Cai,Lord,5,S,Cai,Ornius Rider,Light Cavalry,Bardinger,Orichaldia,The Cavalier,"Flame Lord. Mounted all-rounder with strong mobility, magic access, and capture utility."
+Dietrich,Lord,5,S,Dietrich,Gladiator,Myrmidon,Shido,Sword Master,The Blade,Flame Lord. Premier sword infantry with high avoid and outstanding growths.
+Eshmel,Avatar,5,S,All,Soldier,Armored Knight,Guardian,Sentinel,The Trident,Avatar. Flexible spear and white-magic frontline with excellent utility.
+Esmeralda,Recruitable,5,S,All,Gladiator,Armored Ornius Rider,Cataphract,Bau Lord,The Cavalier,Armored cavalry bruiser with high Strength and Defense.
+Guzran,Recruitable,5,S,All,Gladiator,Myrmidon,Shido,Sword Master,The Blade,Crit-focused sword infantry with strong personal utility.
+Leda,Lord,5,S,Leda,Hunter,Archer,Dancer,Shadow Seeker,The Apsara,Flame Lord. Dancer with unmatched mobility and support.
+Orchel,Recruitable,5,S,All,Diviner,Priest,Bishop,Wiseman,The Avatar,Top-tier white mage with strong healing and magic damage.
+Sirocco,Recruitable,5,S,All,Diviner,Shaman,Troubadour,Valkyrium,The Avatar,Versatile mage with evasion tools and broad elemental coverage.
+Talimun,Recruitable,5,S,All,Diviner,Shaman,Ovate,Druid,The Avatar,High-damage black mage with strong magic growth.
+Theodora,Lord,5,S,Theodora,Gladiator,Armored Ornius Rider,Guardian,Sentinel,The Trident,Flame Lord. Mounted armored wall with spear and healing utility.
+Ultand,Recruitable,5,S,All,Diviner,Priest,Guardian,Sentinel,The Trident,Spear and white-magic hybrid with excellent support and durability.
+Bonaventure,Recruitable,4,A,Theodora,Diviner,Shaman,Ovate,Druid,The Avatar,Offensive mage with good magic and support options.
+Catania,Recruitable,4,A,All,Ornius Rider,Armored Ornius Rider,Caladrius,Celestial Trooper,The Cavalier,Fast flying magic knight with strong mobility and damage.
+Creek,Recruitable,4,A,All,Soldier,Light Cavalry,Bardinger,Orichaldia,The Cavalier,Mounted support unit with strong mobility and utility.
+Diego,Recruitable,4,A,All,Gladiator,Myrmidon,Shido,Sword Master,The Blade,Fast sword infantry with strong player-phase damage.
+Fabio,Recruitable,4,A,All,Diviner,Shaman,Ovate,Druid,The Avatar,Dark mage with debuff utility and solid ranged damage.
+Inyoni,Recruitable,4,A,All,Hunter,Archer,Sniper,Bow Knight,The Calamity,Reliable bow damage with good range and accuracy.
+Kiroc,Recruitable,4,A,All,Hunter,Archer,Sniper,Bow Knight,The Calamity,Accurate bow specialist with good range and mobility.
+Loretta,Recruitable,4,A,All,Ornius Rider,Wing Soldier,Bardinger,Celestial Trooper,The Blade,Flying sword and magic hybrid with good mobility.
+Nezha,Recruitable,4,A,All,Gladiator,Brigand,Warrior,Battlemaster,The Eternal,Axe bruiser with high Strength and good frontline presence.
+Ninae,Recruitable,4,A,All,Diviner,Priest,Bishop,Sentinel,The Trident,Anti-magic spear tank with strong survivability.
+Noctula,Recruitable,4,A,All,Gladiator,Brigand,Warrior,Battlemaster,The Eternal,Mobile flying attacker with strong flanking potential.
+Nuzzuo,Recruitable,4,A,All,Hunter,Rogue,Forest Knight,Bow Knight,The Calamity,Bow and utility unit with Locktouch and strong ranged pressure.
+Olympia,Recruitable,4,A,All,Diviner,Shaman,Ovate,Wiseman,The Avatar,Elite healer with strong Nosferatu damage.
+Tialla,Recruitable,4,A,All,Diviner,Priest,Troubadour,Valkyrium,The Avatar,Mounted healer with good magic and support utility.
+Yang Jie,Recruitable,4,A,All,Diviner,Priest,Bishop,Wiseman,The Avatar,White mage with solid healing and magic damage.
+Centurio,Recruitable,3,B,All,Soldier,Armored Knight,Dreadnought,Castle Knight,The Trident,Late armored knight with strong physical bulk.
+Dante,Recruitable,3,B,All,Diviner,Shaman,Ovate,Druid,The Avatar,Black mage with an ally dodge aura and good magic.
+Gaitz,Recruitable,3,B,All,Soldier,Light Cavalry,Bardinger,Orichaldia,The Cavalier,Mounted spear unit with solid mobility.
+Goliath,Recruitable,3,B,All,Gladiator,Armored Knight,Dreadnought,Battlemaster,The Eternal,Heavy axe bruiser with high HP and Defense.
+Hong Hua,Recruitable,3,B,All,Diviner,Shaman,Ovate,Druid,The Avatar,Offensive mage with strong black magic.
+Jester,Recruitable,3,B,All,Gladiator,Brigand,Ranger,Shadow Seeker,The Apsara,Bow and sword utility unit with Locktouch and good range.
+Lilian,Recruitable,3,B,All,Hunter,Archer,Sniper,Bow Adept,The Calamity,Infantry bow specialist with strong single-target damage.
+Lysander,Recruitable,3,B,All,Gladiator,Armored Ornius Rider,Dragoon,Bau Lord,The Cavalier,Mounted flying bruiser with good mobility.
+Mu,Recruitable,3,B,All,Gladiator,Brigand,Warrior,Battlemaster,The Eternal,Physical bruiser with strong scaling and damage.
+Peter,Recruitable,3,B,All,Hunter,Archer,Forest Knight,Bow Knight,The Calamity,Mounted archer with good range and repositioning.
+Sha Lan,Recruitable,3,B,All,Diviner,Priest,Bishop,Sentinel,The Godhand,White mage with strong healing and spear utility.
+Simon,Recruitable,3,B,All,Gladiator,Brigand,Warrior,Battlemaster,The Eternal,Axe bruiser with survivability tools.
+Sofia,Recruitable,3,B,All,Diviner,Priest,Bishop,Wiseman,The Avatar,White mage with excellent healing and magic damage.
+Tobias,Recruitable,3,B,Theodora,Gladiator,Armored Ornius Rider,Cataphract,Great Knight,The Cavalier,Mounted great knight with high accuracy and durability.
+Troy,Recruitable,3,B,All,Gladiator,Pugilist,Warrior,War Monk,The Godhand,Gauntlet fighter with healing utility.
+Benditz,Recruitable,2,C,All,Hunter,Charioteer,Forest Knight,Bow Knight,The Calamity,Mounted archer with decent range and mobility.
+Buccar,Recruitable,2,C,All,Gladiator,Light Cavalry,Bardinger,Bau Lord,The Cavalier,Melee bruiser with limited range and survivability.
+Dadao,Recruitable,2,C,All,Gladiator,Armored Knight,Dreadnought,Battlemaster,The Eternal,High-damage axe unit with low durability.
+Fianna,Recruitable,2,C,All,Diviner,Priest,Bishop,Wiseman,The Avatar,Mounted healer with good magic.
+Halvin,Recruitable,2,C,All,Hunter,Archer,Forest Knight,Bow Knight,The Calamity,"Mounted archer with precise, long-range attacks."
+Ludia,Recruitable,2,C,All,Gladiator,Myrmidon,Shido,Sword Master,The Blade,Fragile sword infantry with low base stats.
+Mikaela,Recruitable,2,C,All,Gladiator,Armored Ornius Rider,Warrior,Bau Lord,The Cavalier,Mounted warrior with balanced physical stats.
+Nathan,Recruitable,2,C,All,Soldier,Light Cavalry,Bardinger,Great Knight,The Cavalier,Late mounted knight with high Strength.
+Peppe,Recruitable,2,C,All,Hunter,Archer,Sniper,Sword Master,The Apsara,Bow and sword utility unit with average stats.
+Seteth,Recruitable,2,C,Cai,Ornius Rider,Armored Ornius Rider,Dragoon,Bau Lord,The Cavalier,Flying spear unit with good mobility.
+Ursula,Recruitable,2,C,All,Hunter,Archer,Sniper,Shadow Seeker,The Apsara,Bow and assassin hybrid with strong speed.
+Aswan,Recruitable,1,D,All,Hunter,Archer,Sniper,Bow Knight,The Calamity,Late bow recruit with good accuracy but little training time.
+Io,Recruitable,1,D,All,Gladiator,Light Cavalry,Bardinger,Orichaldia,The Cavalier,Fragile cavalry attacker with strong player-phase damage.
+Jasmine,Recruitable,1,D,All,Ornius Rider,Wing Soldier,Dragoon,Castle Knight,The Eternal,Slow armored axe unit with solid physical bulk.
+Klapka,Recruitable,1,D,Theodora,Soldier,Armored Knight,Guardian,Sentinel,The Trident,Very late armored guardian; niche defensive filler. Theodora route only.
+Majide,Recruitable,1,D,All,Gladiator,Brigand,Warrior,Battlemaster,The Eternal,One-dimensional axe bruiser with low versatility.
+Nydine,Recruitable,1,D,All,Ornius Rider,Armored Ornius Rider,Dragoon,Celestial Trooper,The Cavalier,Fast flying lancer with low bulk.
+Tahonia,Recruitable,1,D,All,—,—,—,Battlemaster,—,Fixed Battlemaster; joins very late and cannot reclass.
+Zarcone,Recruitable,1,D,All,Gladiator,Brigand,Warrior,Battlemaster,The Eternal,Sword infantry outclassed by stronger options.

@@ -2,20 +2,15 @@
 
 ## Purpose
 
-A static, mobile-first companion site for **Fire Emblem: Fortune's Weave**. It reads two
-JSON datasets generated from the source Excel workbook and renders them as filterable,
-sortable, searchable tables in vanilla HTML, CSS and JavaScript.
-
-There is no backend, no runtime framework and no bundler. The only development dependency
-is used by the Excel-to-JSON conversion script.
+A static, mobile-first companion site for **Fire Emblem: Fortune's Weave**. Data is stored in **Supabase** as the single source of truth. The site uses vanilla HTML, CSS and JavaScript with `@supabase/supabase-js` via CDN and performs immediate saves with user feedback. The Excel workbook and JSON files are no longer used at runtime.
 
 ## Stack
 
 - **HTML5**, **CSS3** (custom properties, flex/grid, media queries) and **vanilla JS**
   (ES modules).
-- **Node.js 20+** only for the conversion script and the unit tests.
-- **`exceljs`** as the single `devDependency` to read the `.xlsx` workbook.
-- **`node --test`** for unit-testing pure logic.
+- **Supabase** as the backend/database (single source of truth). Access via `@supabase/supabase-js` loaded from CDN.
+- **Row Level Security (RLS)** enabled on `characters` and `classes` tables; use the publishable/anon key only in the browser.
+- **Node.js 20+** only for data migration utilities (optional).
 - Static hosting via **GitHub Pages from the root of `main`**; all asset paths are relative.
 
 Browser support: current Chrome, Firefox, Safari and Edge (ES modules, modern CSS).
@@ -28,40 +23,27 @@ Browser support: current Chrome, Firefox, Safari and Edge (ES modules, modern CS
 ├── css/
 │   └── styles.css
 ├── js/
-│   ├── main.js        # bootstrap: load data, wire controls, initial render
-│   ├── data.js        # JSON loading and normalisation into app models
-│   ├── state.js       # filter / sort / search state
-│   ├── logic.js       # pure filter, sort and search functions (testable)
-│   └── render.js      # DOM rendering for characters and classes
-├── data/
-│   ├── characters.json
-│   └── classes.json
-├── scripts/
-│   └── build-data.mjs # Excel -> JSON conversion
-├── tests/
-│   ├── logic.test.js
-│   └── data.test.js
-├── package.json       # scripts + exceljs devDependency only
+│   ├── main.js              # bootstrap: load from Supabase, wire controls
+│   ├── data.js              # Supabase data loading/saving
+│   ├── state.js             # filter / sort / search state
+│   ├── logic.js             # pure filter, sort and search functions
+│   ├── render.js            # DOM rendering
+│   ├── supabase-client.js   # Supabase client via CDN
+│   ├── supabase-config.js   # local keys (gitignored)
+│   └── supabase-config.example.js
+├── supabase/
+│   ├── schema.sql
+│   ├── export-json.mjs
+│   ├── characters-import.json
+│   └── classes-import.json
 ├── docs/
 ├── specs/
 └── FE_Fortunes_Weave_Character_Classes.xlsx
 ```
 
-`package.json` sets `"type": "module"` so browser ES modules and `node --test` share the
-same `.js` logic files.
+## Data Source
 
-## Data Pipeline
-
-`scripts/build-data.mjs` reads `FE_Fortunes_Weave_Character_Classes.xlsx` and writes
-`data/characters.json` and `data/classes.json`.
-
-```bash
-npm run build:data
-```
-
-Requires Node 20+ and `npm install` (uses `exceljs` as a devDependency).
-
-Rules:
+Data is loaded from Supabase tables `characters` and `classes`. All changes made in the UI are saved immediately to Supabase. The Excel file and JSON files are not used at runtime. SQL schema and migration helpers are in `supabase/`.
 
 - The first row of each sheet is the header and is not data.
 - Fully empty rows are skipped.
@@ -163,11 +145,10 @@ are preserved exactly.
 
 ## Verification
 
-- `node --test` covers the pure logic (`logic.js`) and the data loading/normalisation
-  (`data.js`) using small fixtures.
 - Manual browser checks cover layout at iPhone 16 landscape, keyboard navigation, zoom to
   200%, and a screen-reader pass.
-- The data script is re-runnable and its output is deterministic except for `generatedAt`.
+- Data is verified by loading from Supabase and saving changes immediately.
+- RLS policies validated with the publishable key.
 
 ## Governance
 

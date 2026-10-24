@@ -1,0 +1,61 @@
+name,type,minLevel,renown,license,weaponRanksRequired,weapons,movement,classSkills,masterySkill,spanishName,notes
+Commoner,Base,—,—,—,—,Any,4 (foot),—,Combat Basics,Plebeyo,Starting class; no exam.
+Noble,Base,—,—,—,—,Any,4 (foot),—,Combat Basics,Noble,Starting class; no exam.
+Diviner,Beginner,5,1,Beginner License,"Black Magic D, White Magic D","Sword, Axe, Gauntlet, Black Magic, White Magic",4 (foot),Magic Basics,—,Adivino,Magic entry class.
+Gladiator,Beginner,5,1,Beginner License,"Sword D, Axe D, Gauntlet D","Sword, Axe, Gauntlet",4 (foot),Attack Basics,—,Gladiador,Physical entry class.
+Hunter,Beginner,5,1,Beginner License,"Bow D, Sword D","Bow, Sword",4 (foot),Hunting Basics,—,Cazador,Bow entry class.
+Ornius Rider,Beginner,5,1,Beginner License,"Spear D, Axe D, Riding E+","Spear, Sword, Axe",5 (mounted),Offense Basics,—,Jinete de Ornius,Mounted entry class.
+Soldier,Beginner,5,1,Beginner License,"Spear D, Axe D","Spear, Sword, Axe",4 (foot),Defense Basics,—,Soldado,Spear entry class.
+Archer,Specialty,20,4,Specialty License,Bow C,Bow,5 (foot),"Combat Arts +1, Bow Hit +5",Crescendo,Arquero,Bow specialty.
+Armored Knight,Specialty,20,4,Specialty License,"Heavy Armor E+, Axe C, Spear C","Spear, Sword, Axe",—,"Strike-Last Def +3, Combat Arts +1",Great Counter,Caballero Acorazado,Armored spear/axe specialty.
+Armored Ornius Rider,Specialty,20,4,Specialty License,"Riding D, Axe C, Spear C","Spear, Sword, Axe",6 (mounted),—,Sense Threat,Jinete de Ornius Acorazado,Mounted armored specialty.
+Brigand,Specialty,20,4,Specialty License,"Axe C, Sword C","Sword, Axe, Gauntlet",5 (foot),"Combat Arts +1, Axe Hit +3",Regroup,Bandido,Axe specialty.
+Charioteer,Specialty,20,4,Specialty License,"Riding D, Bow C",Bow,5 (mounted),"Chariot Armor, Charioteer Tactics, Charioteer's Path",Charger,Auriga,Mounted bow specialty.
+Light Cavalry,Specialty,20,4,Specialty License,"Riding D, Spear C, Sword C","Spear, Sword, Axe",6 (mounted),—,Bolster Health,Caballería Ligera,Mounted spear/sword specialty.
+Myrmidon,Specialty,20,4,Specialty License,Sword C,"Sword, Spear",5 (foot),"Combat Arts +1, Sword Crit +3",Ravaging Arts,Mirmidón,Sword specialty.
+Priest,Specialty,20,4,Specialty License,White Magic C,"White Magic, Black Magic, Axe, Gauntlet",5 (foot),"White-Magic Seeker, Magic Heal +5",Piety,Sacerdote,White-magic specialty.
+Pugilist,Specialty,20,4,Specialty License,Gauntlet C,Gauntlet,5 (foot),"Combat Arts +1, Brawl Avo +3","Attack, Get Back",Púgil,Gauntlet specialty.
+Rogue,Specialty,20,4,Specialty License,"Bow C, Sword C","Bow, Sword",5 (foot),"Combat Arts +1, Locktouch, Search",In Shadow,Pícaro,Bow/sword utility specialty.
+Shaman,Specialty,20,4,Specialty License,Black Magic C,"Black Magic, White Magic, Sword, Gauntlet",5 (foot),"Black-Magic Seeker, Magic Hit +3",Bind Dexterity,Chamán,Black-magic specialty.
+Wing Soldier,Specialty,20,4,Specialty License,"Flying D, Spear C, Sword C","Spear, Sword",6 (flying),—,Protecting Wings,Soldado Alado,Flying spear/sword specialty; women only.
+Bardinger,Advanced,35,8,Advanced License,"Riding C, Sword B, Spear C","Spear, Sword, Axe",6 (mounted),Combat Arts +2,Aegis,Bardinger,Mounted sword/spear class; name kept untranslated.
+Bishop,Advanced,35,8,Advanced License,White Magic B,"White Magic, Black Magic, Axe, Gauntlet",5 (foot),"White-Magic Seeker, Magic Heal +10",Barrier,Obispo,Advanced white magic.
+Blacksmith,Advanced,35,8,Advanced License,"Axe C, Black Magic D","Axe, Black Magic",5 (foot),"Black-Magic Seeker, Axe Hit +5",Makeshift,Herrero,Route-specific unlock: Dietrich.
+Caladrius,Advanced,35,8,Advanced License,"Riding D, Black Magic B","Spear, Sword, Axe, Black Magic",mounted,"Black-Magic Seeker, Combat Arts +1",Overtake,Caladrius,Route-specific unlock: Cai.
+Cataphract,Advanced,35,8,Advanced License,"Heavy Armor E+, Riding D, Axe B, Spear B","Spear, Sword, Axe",5 (mounted),"Strike-Last Def +3, Combat Arts +1",Pavise,Catafracto,Route-specific unlock: Theodora.
+Dancer,Advanced,35,8,Advanced License,"Bow B, Sword B","Bow, Sword",5 (foot),"Combat Arts +2, Dance",Special Dance,Bailarín,Route-specific unlock: Leda; only one Dancer.
+Dragoon,Advanced,35,8,Advanced License,"Flying C, Axe B, Spear B","Spear, Sword, Axe",6 (mounted),Combat Arts +1,Besieger,Dragón,Flying advanced class.
+Dreadnought,Advanced,35,8,Advanced License,"Heavy Armor D, Axe B, Spear B","Spear, Axe",4 (foot),"Strike-Last Def +5, Combat Arts +2",Focused Counter,Acorazado,Armored advanced class.
+Elephant Rider,Advanced,35,8,Advanced License,Riding C,—,5 (mounted),"War-Elephant Boots, Elephant Tactics",Elephant Vanguard,Jinete de Elefante,Part III unlock; needs Elephant License.
+Forest Knight,Advanced,35,8,Advanced License,"Riding D, Bow B","Bow, Sword",6 (mounted),"Combat Arts +1, Bow Hit +5",Hunter's Eye,Caballero del Bosque,Mounted bow advanced class.
+Guardian,Advanced,35,8,Advanced License,Spear B,"Spear, White Magic",5 (foot),"Combat Arts +2, Magic Heal +10",Brace,Guardián,Spear/healing advanced class.
+Ovate,Advanced,35,8,Advanced License,Black Magic B,"Black Magic, White Magic, Sword, Gauntlet",5 (foot),"Black-Magic Seeker, Magic Hit +5",Bind Speed,Ovate,Advanced black magic; name kept untranslated.
+Ranger,Advanced,35,8,Advanced License,"Bow B, Sword B","Bow, Sword",5 (foot),"Combat Arts +2, Locktouch, Advanced Search",Countershot,Guardabosques,Route-specific unlock: Dietrich / Leda.
+Shido,Advanced,35,8,Advanced License,Sword B,"Sword, Spear",5 (foot),"Combat Arts +2, Sword Crit +5",Ever Vigilant,Shido,Advanced sword class; name kept.
+Sniper,Advanced,35,8,Advanced License,Bow B,Bow,5 (foot),"Combat Arts +2, Bow Hit +10",Marksmanship,Francotirador,Advanced bow class.
+Troubadour,Advanced,35,8,Advanced License,"Riding D, White Magic B, Black Magic B","White Magic, Black Magic",6 (mounted),"Magic Hit +3, Magic Heal +5",Song of Courage,Trovador,Route-specific unlock: Cai / Leda.
+Warrior,Advanced,35,8,Advanced License,"Gauntlet B, Axe B, Sword B","Sword, Axe, Gauntlet",5 (foot),"Combat Arts +2, Axe Hit +5, Brawl Hit +5",Practiced Art,Guerrero,Advanced axe/gauntlet class.
+Battlemaster,Master,45,—,Master License,"Gauntlet A, Axe A, Sword A","Sword, Axe, Gauntlet",5 (foot),"Combat Arts +3, Axe Hit +7, Brawl Hit +7",War Master's Strike,Batallamaestro,Top physical master class.
+Bau Lord,Master,45,—,Master License,"Flying C, Axe A, Spear A","Spear, Sword, Axe",7 (mounted),Combat Arts +2,Ambush,Bau Lord,Flying lord master class; name kept.
+Bow Adept,Master,45,—,Master License,Bow A,Bow,5 (foot),"Combat Arts +3, Bow Hit +15",Sky Hunter,Experto en Arco,Infantry bow master.
+Bow Knight,Master,45,—,Master License,"Riding D, Bow A","Bow, Sword",7 (mounted),"Combat Arts +2, Bow Hit +10",—,Caballero Arquero,Mounted bow master.
+Castle Knight,Master,45,—,Master License,"Heavy Armor C, Axe A, Spear A","Spear, Axe",4 (foot),"Combat Arts +3, Strike-Last Def +7",Intercept,Caballero del Castillo,Armored master.
+Celestial Trooper,Master,45,—,Master License,"Flying C, Spear A, Sword A","Spear, Sword",7 (mounted),"Combat Arts +1, Flying Avo +7",Lightning Reflexes,Soldado Celestial,Flying master; women only.
+Druid,Master,45,—,Master License,Black Magic A,"Black Magic, White Magic, Sword, Gauntlet",5 (foot),"Black-Magic Seeker, Magic Hit +7",—,Druida,Black magic master.
+Great Knight,Master,45,—,Master License,"Heavy Armor D, Riding D, Axe A, Spear A","Spear, Sword, Axe",6 (mounted),Combat Arts +2,—,Gran Caballero,Mounted armored master.
+High Savant,Master,45,—,Master License,"Riding D, Black Magic D, Sword B","Sword, Black Magic",7 (mounted),"Combat Arts +2, Black-Magic Seeker",—,Sabio Supremo,Mounted magic/sword master.
+Orichaldia,Master,45,—,Master License,"Riding B, Spear A, Sword A","Spear, Sword, Axe",7 (mounted),"Combat Arts +3, Mount/Dismount",Fierce Spear,Orichaldia,Mounted master; name kept.
+Sentinel,Master,45,—,Master License,Spear A,"Spear, White Magic",5 (foot),"White-Magic Seeker, Magic Heal +10, Combat Arts +3",Resolute Stance,Centinela,Spear/healing master.
+Shadow Seeker,Master,45,—,Master License,"Bow A, Sword A","Bow, Sword",5 (foot),"Locktouch, Combat Arts +3, Master Search",Dropshadow Blade,Buscador de Sombras,Bow/sword utility master.
+Sword Master,Master,45,—,Master License,Sword A,"Sword, Spear",5 (foot),"Combat Arts +3, Sword Crit +7",—,Maestro Espadachín,Sword master.
+Valkyrium,Master,45,—,Master License,"Riding D, White Magic A, Black Magic A","White Magic, Black Magic",7 (mounted),Magic Heal +10,—,Valkyrium,Mounted magic master; name kept.
+War Monk,Master,45,—,Master License,"White Magic D, Gauntlet B","Gauntlet, White Magic",5 (foot),"White-Magic Seeker, Combat Arts +3",—,Monje Guerrero,Gauntlet/healing master.
+Wiseman,Master,45,—,Master License,White Magic A,"White Magic, Axe, Gauntlet",5 (foot),"White-Magic Seeker, Magic Heal +15",Dominate Magic,Sabio,White magic master.
+The Apsara,Divine,Endgame,—,Divine license + Muses' Necklace,"Bow C, Sword A","Bow, Sword",6 (foot),"Combat Arts +3, Dance",Divine Dance,La Apsara,Unique divine class; one unit at a time.
+The Avatar,Divine,Endgame,—,Divine license + Lotus of Reincarnation,"White Magic S, Black Magic S","Sword, Axe, Gauntlet, Black Magic, White Magic",6 (foot),"Magic Hit +10, Magic Heal +20, All-Magic Zenith",Divine Law,El Avatar,Unique divine class; one unit at a time.
+The Blade,Divine,Endgame,—,Divine license + Demonic Swordguard,Sword S,"Spear, Sword",6 (foot),"Combat Arts +3, Sword Crit +10",Divine Insight,La Hoja,Unique divine class; one unit at a time.
+The Calamity,Divine,Endgame,—,Divine license + Crystal of Darkness,"Bow S, Sword S","Bow, Sword",6 (foot),"Locktouch, Combat Arts +3, Ultimate Search",Divine Will,La Calamidad,Unique divine class; one unit at a time.
+The Cavalier,Divine,Endgame,—,Divine license + Divinium Saddle,"Riding A, Axe S, Spear S, Sword S","Spear, Sword, Axe",8 (mounted),"Mount/Dismount, Combat Arts +3, Golden Ride",Divine Dexterity,El Caballero,Unique divine class; one unit at a time.
+The Eternal,Divine,Endgame,—,Divine license + Scales of Judgement,"Gauntlet S, Axe S, Sword S","Sword, Axe, Gauntlet",6 (foot),"Combat Arts +3, Axe Hit +10, Brawl Hit +10",Divine Might,El Eterno,Unique divine class; one unit at a time.
+The Godhand,Divine,Endgame,—,Divine license + Emperor's Sash,"White Magic C, Gauntlet S","Gauntlet, White Magic",6 (foot),"Combat Arts +3, Brawl Avo +10, White-Magic Zenith",Divine Adornment,La Mano de Dios,Unique divine class; one unit at a time.
+The Trident,Divine,Endgame,—,Divine license + Trident,Spear S,"Spear, White Magic",6 (foot),"Magic Heal +10, Combat Arts +3, White-Magic Zenith",Divine Wall,El Tridente,Unique divine class; one unit at a time.
