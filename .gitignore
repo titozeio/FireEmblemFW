@@ -310,7 +310,6 @@ FakesAssemblies/
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 node_modules/
-js/supabase-config.js
 .env
 .env.local
 

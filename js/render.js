@@ -15,14 +15,15 @@ function cell(value) {
   return td;
 }
 
-function cellInput(value, type = 'text') {
+function cellNotes(value) {
   const td = document.createElement('td');
-  const input = document.createElement('input');
-  input.type = type;
-  input.value = value === '' || value === null || value === undefined ? '' : value;
-  input.className = 'cell-input';
-  td.appendChild(input);
-  return { td, input };
+  const span = document.createElement('span');
+  const text = value === '' || value === null || value === undefined ? '—' : value;
+  span.textContent = text === '—' ? '—' : text.length > 60 ? text.slice(0, 57) + '...' : text;
+  span.title = text;
+  span.className = 'notes-trunc';
+  td.appendChild(span);
+  return td;
 }
 
 function cellSelect(value, options) {
@@ -70,13 +71,14 @@ export function renderTypeOptions(select, types, current) {
   select.value = current;
 }
 
-export function renderCharacters(tbody, list, onChange) {
+export function renderCharacters(tbody, list, onChange, classOptions = []) {
   tbody.innerHTML = '';
+  const classOpts = ['—', ...classOptions.filter((v) => v && v !== '—')];
   for (const c of list) {
     const tr = document.createElement('tr');
     tr.dataset.id = c.id;
 
-    // Name (display only for now, but keep)
+    // Name (display only)
     tr.appendChild(cell(c.name));
 
     // Tier Score (numeric stepper)
@@ -117,22 +119,28 @@ export function renderCharacters(tbody, list, onChange) {
       await onChange?.(c, { recruitRoute: routeSelect.value }, routeSelect);
     });
 
-    // Classes 1-5
+    // Classes 1-5 (dropdowns)
     const classFields = ['initialClass', 'intermediateClass', 'advancedClass', 'masterClass', 'divineClass'];
     for (const field of classFields) {
-      const { td, input } = cellInput(c[field]);
+      const td = document.createElement('td');
+      const sel = document.createElement('select');
+      sel.className = 'cell-select';
+      for (const optv of classOpts) {
+        const o = document.createElement('option');
+        o.value = optv === '—' ? '' : optv;
+        o.textContent = optv;
+        if ((c[field] || '') === o.value) o.selected = true;
+        sel.appendChild(o);
+      }
+      td.appendChild(sel);
       tr.appendChild(td);
-      input.addEventListener('change', async () => {
-        await onChange?.(c, { [field]: input.value || null }, input);
+      sel.addEventListener('change', async () => {
+        await onChange?.(c, { [field]: sel.value || null }, sel);
       });
     }
 
-    // Notes
-    const { td, input } = cellInput(c.roleNotes);
-    tr.appendChild(td);
-    input.addEventListener('change', async () => {
-      await onChange?.(c, { roleNotes: input.value || null }, input);
-    });
+    // Notes (non-editable, truncated with tooltip)
+    tr.appendChild(cellNotes(c.roleNotes));
 
     tbody.appendChild(tr);
   }
