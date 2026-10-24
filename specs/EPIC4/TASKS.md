@@ -18,4 +18,4 @@
 
 ## US4: As the PM I want the site published to GitHub Pages
 
-- [-] [T3] [@dev0] Publish from root of `main` to GitHub Pages and verify the deployed site.
+- [<] [T3] [@dev0] Publish from root of `main` to GitHub Pages and verify the deployed site.
