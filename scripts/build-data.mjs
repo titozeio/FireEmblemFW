@@ -60,10 +60,14 @@ function mapCharacters(rows) {
     const first = trim(values[0]);
     if (first.toLowerCase().startsWith('notes')) {
       for (let j = i; j < rows.length; j++) {
-        const line = trim(rows[j].values.slice(0, 12).join(' | '));
-        if (line === '—') continue;
-        const cleaned = line.replace(/^notes\s*\/\s*sources\s*\|?\s*/i, '').trim() || line;
-        if (cleaned && cleaned !== '—') notes.push(cleaned);
+        const v0 = trim(rows[j].values[0]);
+        if (v0 === '—') continue;
+        if (v0.toLowerCase().startsWith('notes')) {
+          const cleaned = v0.replace(/^notes\s*\/\s*sources\s*:?\s*/i, '').trim();
+          if (cleaned && cleaned !== '—') notes.push(cleaned);
+          continue;
+        }
+        if (v0 && v0 !== '—') notes.push(v0);
       }
       break;
     }
@@ -103,10 +107,14 @@ function mapClasses(rows) {
     const first = trim(values[0]);
     if (first.toLowerCase().startsWith('notes')) {
       for (let j = i; j < rows.length; j++) {
-        const line = trim(rows[j].values.slice(0, 12).join(' | '));
-        if (line === '—') continue;
-        const cleaned = line.replace(/^notes\s*\/\s*sources\s*\|?\s*/i, '').trim() || line;
-        if (cleaned && cleaned !== '—') notes.push(cleaned);
+        const v0 = trim(rows[j].values[0]);
+        if (v0 === '—') continue;
+        if (v0.toLowerCase().startsWith('notes')) {
+          const cleaned = v0.replace(/^notes\s*\/\s*sources\s*:?\s*/i, '').trim();
+          if (cleaned && cleaned !== '—') notes.push(cleaned);
+          continue;
+        }
+        if (v0 && v0 !== '—') notes.push(v0);
       }
       break;
     }
