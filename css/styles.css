@@ -181,6 +181,7 @@ main {
 
 .table-wrapper {
   overflow-x: auto;
+  position: relative;
   border: 1px solid var(--border);
   background: var(--panel);
   max-width: 100%;
@@ -191,10 +192,9 @@ main {
   outline-offset: 2px;
 }
 
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 980px;
+.data-table td,
+.data-table th {
+  position: relative;
 }
 
 .data-table thead th {
@@ -218,8 +218,19 @@ main {
   background: var(--row-alt);
 }
 
+.data-table tbody tr:nth-child(odd) td:first-child {
+  background: var(--panel);
+}
+
 .data-table tbody tr:last-child td {
   border-bottom: none;
+}
+
+.data-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-elev);
+  z-index: 10;
 }
 
 .empty-state {
@@ -302,6 +313,32 @@ main {
   }
 }
 
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+  min-width: 90px;
+  width: 90px;
+}
+
+.data-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  background: var(--bg-elev);
+  z-index: 101;
+  box-shadow: 2px 0 0 var(--border);
+}
+
+.data-table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  background: var(--panel);
+  z-index: 100;
+  box-shadow: 2px 0 0 var(--border);
+}
+
+.data-table tbody tr:nth-child(even) td:first-child {
+  background: var(--row-alt);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -319,12 +356,11 @@ main {
   padding: 4px 6px;
 }
 
-.cell-input[type="number"] {
-  text-align: center;
-}
-
-.status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.notes-trunc {
+  display: inline-block;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
 }

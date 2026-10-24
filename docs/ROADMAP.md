@@ -18,6 +18,7 @@ Status legend:
 | EPIC3 | Classes            | Add the Classes section with search, filter by type and sorting by class and type.                                                                                     | done      | 2026-10-24 |
 | EPIC4 | Responsive, accessibility and deployment | Harden the mobile-first landscape layout (iPhone 16), run the accessibility pass, verify manually and publish the site to GitHub Pages.                        | done      | 2026-10-24 |
 | EPIC5 | Migrate to Supabase as single source of truth | Replace Excel/JSON with Supabase tables (characters, classes). Use @supabase/supabase-js via CDN, RLS with anon key, immediate saves with loading/error feedback. | done      | 2026-10-24 |
+| EPIC6 | UI polish and UX feedback | Footer/copyright, header title/logo, wider TS column, class columns as dropdowns from valid values, non-editable truncated notes with tooltip, sticky first column on horizontal scroll. | done      | 2026-10-24 |
 
 ## Dependencies
 

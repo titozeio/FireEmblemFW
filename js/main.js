@@ -28,15 +28,12 @@ const classState = createClassesState();
 function applyAndRenderCharacters() {
   const filtered = filterCharacters(charState.all, charState.filters);
   const sorted = sortCharacters(filtered, charState.filters.sort);
+  const classNames = Array.from(new Set((classState.all || []).map(c => c.name).filter(Boolean))).sort((a,b)=>a.localeCompare(b));
   renderCharacters(charTbody, sorted, async (char, updates, el) => {
     try {
       if (charStatus) charStatus.textContent = 'Guardando...';
-      const saved = await updateCharacter(char.id, updates);
-      // Update local state
+      await updateCharacter(char.id, updates);
       Object.assign(char, updates);
-      if (updates.tierScore !== undefined || updates.tierLetter !== undefined) {
-        // update display
-      }
       if (charStatus) charStatus.textContent = 'Guardado';
       setTimeout(() => {
         if (charStatus) charStatus.textContent = `Mostrando ${sorted.length} de ${charState.all.length} personajes.`;
@@ -46,7 +43,7 @@ function applyAndRenderCharacters() {
       console.error(err);
       if (charStatus) charStatus.textContent = 'Error al guardar.';
     }
-  });
+  }, classNames);
   if (charStatus) charStatus.textContent = `Mostrando ${sorted.length} de ${charState.all.length} personajes.`;
   charEmpty.hidden = sorted.length !== 0;
 }
