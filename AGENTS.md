@@ -27,6 +27,14 @@ This project follows a lean, docs-first SDD Agile workflow.
 - The agent may draft only when the required inputs are already present in the target project's finalized docs or explicitly provided by the PM.
 - When in doubt, ask before acting.
 
+## Project-Specific Rules
+
+- **Locked stack:** the site uses vanilla HTML, CSS and JavaScript. Any framework, bundler, or runtime dependency requires explicit PM approval.
+- **Data fidelity:** never invent or alter game data. Data changes start in the source Excel workbook and the JSON datasets are regenerated from it.
+- **Accessibility and mobile-first landscape** are acceptance requirements, not optional extras.
+- **Language:** UI text is in English; data is displayed exactly as it comes from the workbook.
+- **Dev dependencies** (for example `exceljs`) are allowed only when justified and recorded in `docs/ARCHITECTURE.md`.
+
 ## Navigation Rule
 
 Load only the minimum context required:
