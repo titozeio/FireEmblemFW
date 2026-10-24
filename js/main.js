@@ -1,4 +1,4 @@
-import { loadCharacters, loadClasses } from './data.js';
+import { loadCharacters, loadClasses, updateCharacter } from './data.js';
 import { createCharactersState, createClassesState } from './state.js';
 import { filterCharacters, sortCharacters, getRoutes, filterClasses, sortClasses, getTypes } from './logic.js';
 import { renderCharacters, renderClasses, renderRouteOptions, renderTypeOptions, renderNotes, renderStatus } from './render.js';
@@ -14,7 +14,6 @@ const charSort = document.getElementById('char-sort');
 const charTbody = document.getElementById('char-tbody');
 const charStatus = document.getElementById('char-status');
 const charEmpty = document.getElementById('char-empty');
-const charNotesList = document.getElementById('char-notes-list');
 
 const classSearch = document.getElementById('class-search');
 const classType = document.getElementById('class-type');
@@ -22,7 +21,6 @@ const classSort = document.getElementById('class-sort');
 const classTbody = document.getElementById('class-tbody');
 const classStatus = document.getElementById('class-status');
 const classEmpty = document.getElementById('class-empty');
-const classNotesList = document.getElementById('class-notes-list');
 
 const charState = createCharactersState();
 const classState = createClassesState();
@@ -30,8 +28,26 @@ const classState = createClassesState();
 function applyAndRenderCharacters() {
   const filtered = filterCharacters(charState.all, charState.filters);
   const sorted = sortCharacters(filtered, charState.filters.sort);
-  renderCharacters(charTbody, sorted);
-  renderStatus(charStatus, charState.all.length, sorted.length, 'characters');
+  renderCharacters(charTbody, sorted, async (char, updates, el) => {
+    try {
+      if (charStatus) charStatus.textContent = 'Guardando...';
+      const saved = await updateCharacter(char.id, updates);
+      // Update local state
+      Object.assign(char, updates);
+      if (updates.tierScore !== undefined || updates.tierLetter !== undefined) {
+        // update display
+      }
+      if (charStatus) charStatus.textContent = 'Guardado';
+      setTimeout(() => {
+        if (charStatus) charStatus.textContent = `Mostrando ${sorted.length} de ${charState.all.length} personajes.`;
+      }, 800);
+      applyAndRenderCharacters();
+    } catch (err) {
+      console.error(err);
+      if (charStatus) charStatus.textContent = 'Error al guardar.';
+    }
+  });
+  if (charStatus) charStatus.textContent = `Mostrando ${sorted.length} de ${charState.all.length} personajes.`;
   charEmpty.hidden = sorted.length !== 0;
 }
 
@@ -39,7 +55,7 @@ function applyAndRenderClasses() {
   const filtered = filterClasses(classState.all, classState.filters);
   const sorted = sortClasses(filtered, classState.filters.sort);
   renderClasses(classTbody, sorted);
-  renderStatus(classStatus, classState.all.length, sorted.length, 'classes');
+  if (classStatus) classStatus.textContent = `Mostrando ${sorted.length} de ${classState.all.length} clases.`;
   classEmpty.hidden = sorted.length !== 0;
 }
 
@@ -107,11 +123,11 @@ loadCharacters()
     charState.notes = data.meta?.notes || [];
     charState.routes = getRoutes(charState.all);
     if (charRoute) renderRouteOptions(charRoute, charState.routes, charState.filters.route);
-    if (charNotesList) renderNotes(charNotesList, charState.notes);
+    if (charStatus) charStatus.textContent = 'Cargando personajes...';
     applyAndRenderCharacters();
   })
   .catch((err) => {
-    if (charStatus) charStatus.textContent = 'Failed to load character data.';
+    if (charStatus) charStatus.textContent = 'Error al cargar personajes.';
     console.error(err);
   });
 
@@ -121,10 +137,9 @@ loadClasses()
     classState.notes = data.meta?.notes || [];
     classState.types = getTypes(classState.all);
     if (classType) renderTypeOptions(classType, classState.types, classState.filters.type);
-    if (classNotesList) renderNotes(classNotesList, classState.notes);
     applyAndRenderClasses();
   })
   .catch((err) => {
-    if (classStatus) classStatus.textContent = 'Failed to load class data.';
+    if (classStatus) classStatus.textContent = 'Error al cargar clases.';
     console.error(err);
   });

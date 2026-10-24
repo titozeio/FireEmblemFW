@@ -36,15 +36,15 @@
             <input id="char-search" type="search" inputmode="search" autocomplete="off" placeholder="e.g. Dietrich">
           </div>
           <div class="control">
-            <label for="char-route">Recruit Route</label>
+            <label for="char-route">Route</label>
             <select id="char-route">
-              <option value="all">All routes</option>
+              <option value="all">All</option>
             </select>
           </div>
           <div class="control">
-            <label for="char-tier-score">Tier Score</label>
+            <label for="char-tier-score">TS</label>
             <select id="char-tier-score">
-              <option value="all">All scores</option>
+              <option value="all">All</option>
               <option value="5">5 (S)</option>
               <option value="4">4 (A)</option>
               <option value="3">3 (B)</option>
@@ -53,9 +53,9 @@
             </select>
           </div>
           <div class="control">
-            <label for="char-tier-letter">Tier Letter</label>
+            <label for="char-tier-letter">Tier</label>
             <select id="char-tier-letter">
-              <option value="all">All tiers</option>
+              <option value="all">All</option>
               <option value="S">S</option>
               <option value="A">A</option>
               <option value="B">B</option>
@@ -68,13 +68,13 @@
             <select id="char-sort">
               <option value="name-asc">Name (A–Z)</option>
               <option value="name-desc">Name (Z–A)</option>
-              <option value="tier-desc">Tier Score (High–Low)</option>
-              <option value="tier-asc">Tier Score (Low–High)</option>
+              <option value="tier-desc">TS (High–Low)</option>
+              <option value="tier-asc">TS (Low–High)</option>
             </select>
           </div>
         </section>
 
-        <p id="char-status" class="status" aria-live="polite" aria-atomic="true">Loading characters…</p>
+        <p id="char-status" class="status" aria-live="polite" aria-atomic="true">Cargando personajes...</p>
 
         <div class="table-wrapper" role="region" aria-label="Characters table" tabindex="0">
           <table class="data-table">
@@ -82,16 +82,15 @@
             <thead>
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Type</th>
-                <th scope="col">Tier Score</th>
-                <th scope="col">Tier Letter</th>
-                <th scope="col">Recruit Route</th>
-                <th scope="col">Initial Class</th>
-                <th scope="col">Intermediate Class</th>
-                <th scope="col">Advanced Class</th>
-                <th scope="col">Master Class</th>
-                <th scope="col">Divine Class</th>
-                <th scope="col">Role / Notes</th>
+                <th scope="col">TS</th>
+                <th scope="col">Tier</th>
+                <th scope="col">Route</th>
+                <th scope="col">Class 1</th>
+                <th scope="col">Class 2</th>
+                <th scope="col">Class 3</th>
+                <th scope="col">Class 4</th>
+                <th scope="col">Class 5</th>
+                <th scope="col">Notes</th>
               </tr>
             </thead>
             <tbody id="char-tbody"></tbody>
@@ -99,11 +98,6 @@
         </div>
 
         <p id="char-empty" class="empty-state" hidden>No characters match the current filters.</p>
-
-        <footer class="section-notes">
-          <h3>Notes</h3>
-          <ul id="char-notes-list"></ul>
-        </footer>
       </div>
     </section>
 
@@ -137,7 +131,7 @@
           </div>
         </section>
 
-        <p id="class-status" class="status" aria-live="polite" aria-atomic="true">Loading classes…</p>
+        <p id="class-status" class="status" aria-live="polite" aria-atomic="true">Cargando clases...</p>
 
         <div class="table-wrapper" role="region" aria-label="Classes table" tabindex="0">
           <table class="data-table">
@@ -163,18 +157,13 @@
         </div>
 
         <p id="class-empty" class="empty-state" hidden>No classes match the current filters.</p>
-
-        <footer class="section-notes">
-          <h3>Notes</h3>
-          <ul id="class-notes-list"></ul>
-        </footer>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>Data sourced from FE_Fortunes_Weave_Character_Classes.xlsx. UI in English.</p>
+      <p>Source: Supabase (single source of truth). UI in English.</p>
     </div>
   </footer>
 

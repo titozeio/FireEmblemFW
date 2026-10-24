@@ -16,7 +16,8 @@ Status legend:
 | EPIC1 | Data pipeline      | Convert the source Excel workbook into the `characters.json` and `classes.json` datasets consumed by the site, with a reproducible Node script and a documented command. | done      | 2026-10-24 |
 | EPIC2 | Landing shell + Characters | Build the static landing shell (HTML/CSS/JS, Fire Emblem-inspired look) and the Characters section with search, filters (route, score, letter) and sorting.     | done      | 2026-10-24 |
 | EPIC3 | Classes            | Add the Classes section with search, filter by type and sorting by class and type.                                                                                     | done      | 2026-10-24 |
-| EPIC4 | Responsive, accessibility and deployment | Harden the mobile-first landscape layout (iPhone 16), run the accessibility pass, verify manually and publish the site to GitHub Pages.                        | implement |          |
+| EPIC4 | Responsive, accessibility and deployment | Harden the mobile-first landscape layout (iPhone 16), run the accessibility pass, verify manually and publish the site to GitHub Pages.                        | done      | 2026-10-24 |
+| EPIC5 | Migrate to Supabase as single source of truth | Replace Excel/JSON with Supabase tables (characters, classes). Use @supabase/supabase-js via CDN, RLS with anon key, immediate saves with loading/error feedback. | review    |          |
 
 ## Dependencies
 
