@@ -14,7 +14,7 @@ Status legend:
 | ----- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- |
 | EPIC0 | First product epic | Create the basic foundation of the project: agents constitution, initial specs, architecture and initial roadmap so the project can start normal SDD Sprint execution. | done      | 2026-10-24 |
 | EPIC1 | Data pipeline      | Convert the source Excel workbook into the `characters.json` and `classes.json` datasets consumed by the site, with a reproducible Node script and a documented command. | done      | 2026-10-24 |
-| EPIC2 | Landing shell + Characters | Build the static landing shell (HTML/CSS/JS, Fire Emblem-inspired look) and the Characters section with search, filters (route, score, letter) and sorting.     | spec      |          |
+| EPIC2 | Landing shell + Characters | Build the static landing shell (HTML/CSS/JS, Fire Emblem-inspired look) and the Characters section with search, filters (route, score, letter) and sorting.     | implement |          |
 | EPIC3 | Classes            | Add the Classes section with search, filter by type and sorting by class and type.                                                                                     | new       |          |
 | EPIC4 | Responsive, accessibility and deployment | Harden the mobile-first landscape layout (iPhone 16), run the accessibility pass, verify manually and publish the site to GitHub Pages.                        | new       |          |
 
