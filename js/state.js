@@ -12,3 +12,16 @@ export function createCharactersState() {
     routes: []
   };
 }
+
+export function createClassesState() {
+  return {
+    all: [],
+    notes: [],
+    filters: {
+      search: '',
+      type: 'all',
+      sort: 'name-asc'
+    },
+    types: []
+  };
+}

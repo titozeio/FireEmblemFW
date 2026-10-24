@@ -10,6 +10,14 @@ export function getRoutes(characters) {
   return Array.from(set).sort((a, b) => a.localeCompare(b));
 }
 
+export function getTypes(classes) {
+  const set = new Set();
+  for (const c of classes) {
+    if (c.type) set.add(c.type);
+  }
+  return Array.from(set).sort((a, b) => a.localeCompare(b));
+}
+
 export function filterCharacters(characters, filters) {
   const search = normalise(filters.search || '');
   return characters.filter((c) => {
@@ -47,5 +55,40 @@ export function sortCharacters(characters, sort) {
     return list;
   }
   list.sort((a, b) => a.name.localeCompare(b.name));
+  return list;
+}
+
+export function filterClasses(classes, filters) {
+  const search = normalise(filters.search || '');
+  return classes.filter((c) => {
+    if (search && !normalise(c.name).includes(search)) return false;
+    if (filters.type && filters.type !== 'all' && c.type !== filters.type) return false;
+    return true;
+  });
+}
+
+export function sortClasses(classes, sort) {
+  const list = [...classes];
+  if (sort === 'type-asc') {
+    list.sort((a, b) => {
+      const t = (a.type || '').localeCompare(b.type || '');
+      if (t !== 0) return t;
+      return (a.name || '').localeCompare(b.name || '');
+    });
+    return list;
+  }
+  if (sort === 'type-desc') {
+    list.sort((a, b) => {
+      const t = (b.type || '').localeCompare(a.type || '');
+      if (t !== 0) return t;
+      return (a.name || '').localeCompare(b.name || '');
+    });
+    return list;
+  }
+  if (sort === 'name-desc') {
+    list.sort((a, b) => (b.name || '').localeCompare(a.name || ''));
+    return list;
+  }
+  list.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
   return list;
 }

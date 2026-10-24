@@ -19,6 +19,21 @@ export function renderRouteOptions(select, routes, current) {
   select.value = current;
 }
 
+export function renderTypeOptions(select, types, current) {
+  select.innerHTML = '';
+  const all = document.createElement('option');
+  all.value = 'all';
+  all.textContent = 'All types';
+  select.appendChild(all);
+  for (const type of types) {
+    const opt = document.createElement('option');
+    opt.value = type;
+    opt.textContent = type;
+    select.appendChild(opt);
+  }
+  select.value = current;
+}
+
 export function renderCharacters(tbody, list) {
   tbody.innerHTML = '';
   for (const c of list) {
@@ -38,6 +53,26 @@ export function renderCharacters(tbody, list) {
   }
 }
 
+export function renderClasses(tbody, list) {
+  tbody.innerHTML = '';
+  for (const c of list) {
+    const tr = document.createElement('tr');
+    tr.appendChild(cell(c.name));
+    tr.appendChild(cell(c.type));
+    tr.appendChild(cell(c.minLevel));
+    tr.appendChild(cell(c.renown));
+    tr.appendChild(cell(c.license));
+    tr.appendChild(cell(c.weaponRanksRequired));
+    tr.appendChild(cell(c.weapons));
+    tr.appendChild(cell(c.movement));
+    tr.appendChild(cell(c.classSkills));
+    tr.appendChild(cell(c.masterySkill));
+    tr.appendChild(cell(c.spanishName));
+    tr.appendChild(cell(c.notes));
+    tbody.appendChild(tr);
+  }
+}
+
 export function renderNotes(listEl, notes) {
   listEl.innerHTML = '';
   for (const n of notes) {
@@ -47,6 +82,6 @@ export function renderNotes(listEl, notes) {
   }
 }
 
-export function renderStatus(el, total, shown) {
-  el.textContent = `Showing ${shown} of ${total} characters.`;
+export function renderStatus(el, total, shown, label) {
+  el.textContent = `Showing ${shown} of ${total} ${label}.`;
 }

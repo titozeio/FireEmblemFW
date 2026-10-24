@@ -102,6 +102,13 @@ img {
   outline-offset: 2px;
 }
 
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 main {
   padding: 1.5rem 0 2rem;
 }
@@ -269,6 +276,29 @@ main {
 
   .data-table {
     min-width: 1040px;
+  }
+
+  .control input,
+  .control select {
+    min-height: 44px;
+  }
+
+  .nav-btn {
+    min-height: 44px;
+  }
+
+  .table-wrapper {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 400px) and (min-width: 800px) {
+  .controls {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .data-table {
+    min-width: 1120px;
   }
 }
 

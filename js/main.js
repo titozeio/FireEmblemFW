@@ -1,7 +1,7 @@
-import { loadCharacters } from './data.js';
-import { createCharactersState } from './state.js';
-import { filterCharacters, sortCharacters, getRoutes } from './logic.js';
-import { renderCharacters, renderRouteOptions, renderNotes, renderStatus } from './render.js';
+import { loadCharacters, loadClasses } from './data.js';
+import { createCharactersState, createClassesState } from './state.js';
+import { filterCharacters, sortCharacters, getRoutes, filterClasses, sortClasses, getTypes } from './logic.js';
+import { renderCharacters, renderClasses, renderRouteOptions, renderTypeOptions, renderNotes, renderStatus } from './render.js';
 
 const navButtons = document.querySelectorAll('.nav-btn');
 const sections = document.querySelectorAll('.section');
@@ -16,14 +16,31 @@ const charStatus = document.getElementById('char-status');
 const charEmpty = document.getElementById('char-empty');
 const charNotesList = document.getElementById('char-notes-list');
 
-const state = createCharactersState();
+const classSearch = document.getElementById('class-search');
+const classType = document.getElementById('class-type');
+const classSort = document.getElementById('class-sort');
+const classTbody = document.getElementById('class-tbody');
+const classStatus = document.getElementById('class-status');
+const classEmpty = document.getElementById('class-empty');
+const classNotesList = document.getElementById('class-notes-list');
 
-function applyAndRender() {
-  const filtered = filterCharacters(state.all, state.filters);
-  const sorted = sortCharacters(filtered, state.filters.sort);
+const charState = createCharactersState();
+const classState = createClassesState();
+
+function applyAndRenderCharacters() {
+  const filtered = filterCharacters(charState.all, charState.filters);
+  const sorted = sortCharacters(filtered, charState.filters.sort);
   renderCharacters(charTbody, sorted);
-  renderStatus(charStatus, state.all.length, sorted.length);
+  renderStatus(charStatus, charState.all.length, sorted.length, 'characters');
   charEmpty.hidden = sorted.length !== 0;
+}
+
+function applyAndRenderClasses() {
+  const filtered = filterClasses(classState.all, classState.filters);
+  const sorted = sortClasses(filtered, classState.filters.sort);
+  renderClasses(classTbody, sorted);
+  renderStatus(classStatus, classState.all.length, sorted.length, 'classes');
+  classEmpty.hidden = sorted.length !== 0;
 }
 
 navButtons.forEach((btn) => {
@@ -34,41 +51,80 @@ navButtons.forEach((btn) => {
   });
 });
 
-charSearch.addEventListener('input', (e) => {
-  state.filters.search = e.target.value;
-  applyAndRender();
-});
+if (charSearch) {
+  charSearch.addEventListener('input', (e) => {
+    charState.filters.search = e.target.value;
+    applyAndRenderCharacters();
+  });
+}
+if (charRoute) {
+  charRoute.addEventListener('change', (e) => {
+    charState.filters.route = e.target.value;
+    applyAndRenderCharacters();
+  });
+}
+if (charTierScore) {
+  charTierScore.addEventListener('change', (e) => {
+    charState.filters.tierScore = e.target.value;
+    applyAndRenderCharacters();
+  });
+}
+if (charTierLetter) {
+  charTierLetter.addEventListener('change', (e) => {
+    charState.filters.tierLetter = e.target.value;
+    applyAndRenderCharacters();
+  });
+}
+if (charSort) {
+  charSort.addEventListener('change', (e) => {
+    charState.filters.sort = e.target.value;
+    applyAndRenderCharacters();
+  });
+}
 
-charRoute.addEventListener('change', (e) => {
-  state.filters.route = e.target.value;
-  applyAndRender();
-});
-
-charTierScore.addEventListener('change', (e) => {
-  state.filters.tierScore = e.target.value;
-  applyAndRender();
-});
-
-charTierLetter.addEventListener('change', (e) => {
-  state.filters.tierLetter = e.target.value;
-  applyAndRender();
-});
-
-charSort.addEventListener('change', (e) => {
-  state.filters.sort = e.target.value;
-  applyAndRender();
-});
+if (classSearch) {
+  classSearch.addEventListener('input', (e) => {
+    classState.filters.search = e.target.value;
+    applyAndRenderClasses();
+  });
+}
+if (classType) {
+  classType.addEventListener('change', (e) => {
+    classState.filters.type = e.target.value;
+    applyAndRenderClasses();
+  });
+}
+if (classSort) {
+  classSort.addEventListener('change', (e) => {
+    classState.filters.sort = e.target.value;
+    applyAndRenderClasses();
+  });
+}
 
 loadCharacters()
   .then((data) => {
-    state.all = data.characters || [];
-    state.notes = data.meta?.notes || [];
-    state.routes = getRoutes(state.all);
-    renderRouteOptions(charRoute, state.routes, state.filters.route);
-    renderNotes(charNotesList, state.notes);
-    applyAndRender();
+    charState.all = data.characters || [];
+    charState.notes = data.meta?.notes || [];
+    charState.routes = getRoutes(charState.all);
+    if (charRoute) renderRouteOptions(charRoute, charState.routes, charState.filters.route);
+    if (charNotesList) renderNotes(charNotesList, charState.notes);
+    applyAndRenderCharacters();
   })
   .catch((err) => {
-    charStatus.textContent = 'Failed to load character data.';
+    if (charStatus) charStatus.textContent = 'Failed to load character data.';
+    console.error(err);
+  });
+
+loadClasses()
+  .then((data) => {
+    classState.all = data.classes || [];
+    classState.notes = data.meta?.notes || [];
+    classState.types = getTypes(classState.all);
+    if (classType) renderTypeOptions(classType, classState.types, classState.filters.type);
+    if (classNotesList) renderNotes(classNotesList, classState.notes);
+    applyAndRenderClasses();
+  })
+  .catch((err) => {
+    if (classStatus) classStatus.textContent = 'Failed to load class data.';
     console.error(err);
   });

@@ -29,7 +29,8 @@
           <p class="section-description">Browse units, filter by route and tier, and sort by name or tier score.</p>
         </header>
 
-        <section class="controls" aria-label="Character filters and sorting">
+        <section class="controls" aria-labelledby="char-filters-heading">
+          <h3 id="char-filters-heading" class="sr-only">Character filters and sorting</h3>
           <div class="control">
             <label for="char-search">Search by name</label>
             <input id="char-search" type="search" inputmode="search" autocomplete="off" placeholder="e.g. Dietrich">
@@ -110,8 +111,63 @@
       <div class="container">
         <header class="section-header">
           <h2 id="classes-heading" class="section-title">Classes</h2>
-          <p class="section-description">Coming soon.</p>
+          <p class="section-description">Browse classes, filter by type and sort by class or type.</p>
         </header>
+
+        <section class="controls" aria-labelledby="class-filters-heading">
+          <h3 id="class-filters-heading" class="sr-only">Class filters and sorting</h3>
+          <div class="control">
+            <label for="class-search">Search by name</label>
+            <input id="class-search" type="search" inputmode="search" autocomplete="off" placeholder="e.g. Druid">
+          </div>
+          <div class="control">
+            <label for="class-type">Type</label>
+            <select id="class-type">
+              <option value="all">All types</option>
+            </select>
+          </div>
+          <div class="control">
+            <label for="class-sort">Sort by</label>
+            <select id="class-sort">
+              <option value="name-asc">Class (A–Z)</option>
+              <option value="name-desc">Class (Z–A)</option>
+              <option value="type-asc">Type (A–Z)</option>
+              <option value="type-desc">Type (Z–A)</option>
+            </select>
+          </div>
+        </section>
+
+        <p id="class-status" class="status" aria-live="polite" aria-atomic="true">Loading classes…</p>
+
+        <div class="table-wrapper" role="region" aria-label="Classes table" tabindex="0">
+          <table class="data-table">
+            <caption class="sr-only">Fire Emblem: Fortune's Weave class data</caption>
+            <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Type</th>
+                <th scope="col">Min Level</th>
+                <th scope="col">Renown</th>
+                <th scope="col">License</th>
+                <th scope="col">Weapon Ranks Required</th>
+                <th scope="col">Weapons</th>
+                <th scope="col">Movement</th>
+                <th scope="col">Class Skills</th>
+                <th scope="col">Mastery Skill</th>
+                <th scope="col">Spanish Name</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody id="class-tbody"></tbody>
+          </table>
+        </div>
+
+        <p id="class-empty" class="empty-state" hidden>No classes match the current filters.</p>
+
+        <footer class="section-notes">
+          <h3>Notes</h3>
+          <ul id="class-notes-list"></ul>
+        </footer>
       </div>
     </section>
   </main>
