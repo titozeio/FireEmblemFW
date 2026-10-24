@@ -4,6 +4,10 @@
 
 `closed`
 
+## Completed On
+
+2026-10-24
+
 ## User Story Order
 
 1. **US1 – Dependency**: Add `@supabase/supabase-js` via CDN and get approval noted.

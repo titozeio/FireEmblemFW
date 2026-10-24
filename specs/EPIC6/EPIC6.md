@@ -1,6 +1,8 @@
 # EPIC6 – Migrate to Supabase as single source of truth
 
-## Objective
+## Status
+
+`done`
 
 Migrate all character and class data from the Excel/JSON pipeline to Supabase. Once migrated, Supabase becomes the single source of truth. The site will load and save directly to Supabase with immediate updates and proper user feedback.
 
