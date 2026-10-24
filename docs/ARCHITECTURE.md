@@ -55,6 +55,12 @@ same `.js` logic files.
 `scripts/build-data.mjs` reads `FE_Fortunes_Weave_Character_Classes.xlsx` and writes
 `data/characters.json` and `data/classes.json`.
 
+```bash
+npm run build:data
+```
+
+Requires Node 20+ and `npm install` (uses `exceljs` as a devDependency).
+
 Rules:
 
 - The first row of each sheet is the header and is not data.

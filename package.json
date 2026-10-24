@@ -1,0 +1,16 @@
+{
+  "name": "fire-emblem-fw",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static companion site for Fire Emblem: Fortune's Weave character and class data.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs"
+  },
+  "devDependencies": {
+    "exceljs": "^4.4.0"
+  }
+}
